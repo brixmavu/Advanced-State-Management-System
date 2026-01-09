@@ -52,8 +52,11 @@ A *state management system* that tracks, syncs, and rewinds changes to your app�
 Imagine you're co-editing a survey form:
 
 - 🧑‍🤝‍🧑 Your teammate updates a question — you hit *Undo*.
+
 - ✍️ You edit multiple fields — wrap them in a *Transaction* and *Commit*.
+
 - 🔄 Your teammate makes changes — they *sync* with yours in real time.
+
 - 🕰 Need to review an older version? Just *Time Travel* back.
 
 > Perfect for *collaborative*, *reactive*, or *data-driven* apps where *reliability* and *history* matter.
@@ -100,9 +103,29 @@ const manager = new AdvancedStateManager(initialState, {
 <details>
 <summary>🧰 <strong>Core API Methods</strong></summary>
 
+Method : Description
 
+`getState(path)` : 🔍 Get the current state or a specific slice
 
-MethodDescription`getState(path)`🔍 Get the current state or a specific slice`setState(updater, description)`✏️ Update the state with a description`subscribe(listener)`📡 Listen for state changes`unsubscribe(listener)`🔕 Stop listening`undo()`⬅️ Revert the last change`redo()`➡️ Reapply the last undone change`beginTransaction(description)`🧱 Start a transaction`commitTransaction()`✅ Commit a transaction`rollbackTransaction()`❌ Rollback a transaction`timeTravel(historyIndex)`⏮ Jump to a previous state</details>
+`setState(updater, description)` : ✏️ Update the state with a description
+
+`subscribe(listener)` : 📡 Listen for state changes
+
+`unsubscribe(listener)` : 🔕 Stop listening
+
+`undo()` : ⬅️ Revert the last change
+
+`redo()` : ➡️ Reapply the last undone change
+
+`beginTransaction(description)` : 🧱 Start a transaction
+
+`commitTransaction()`  : ✅  ommit a transaction
+
+`rollbackTransaction()` : ❌ Rollback a transaction
+
+`timeTravel(historyIndex)` : ⏮ Jump to a previous state
+
+</details>
 
 ---
 
